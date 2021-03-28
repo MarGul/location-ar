@@ -16,6 +16,7 @@
             return navigator.geolocation.getCurrentPosition(function (position) {
                     const entity = document.querySelector('a-entity')
                     entity.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`)
+                    console.log(position)
                 },
                 (err) => alert('Error retriving position', err),
                 {
@@ -38,7 +39,7 @@
                 rotation="0 180 0"
                 scale="0.15 0.15 0.15"
                 animation-mixer
-        />
+        ></a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
     <div>
